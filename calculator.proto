@@ -5,5 +5,6 @@ message Number {
 }
 
 service Calculator {
-    rpc SquareRoot(Number) returns (Number) {}
+    rpc Square(Number) returns (Number) {};
+    rpc SquareRoot(Number) returns (Number) {};
 }

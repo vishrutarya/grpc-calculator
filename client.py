@@ -14,4 +14,15 @@ request = calculator_pb2.Number(value=9)
 # make the remote procedure call (rpc)
 response = stub.SquareRoot(request)
 
-print(response.value)
+print(f"Request: 'square root' of {request.value}. Response: {response.value}")
+
+# make new request and fulfill
+request = calculator_pb2.Number(value=16)
+response = stub.SquareRoot(request)
+print(f"Request: 'square root' of {request.value}. Response: {response.value}")
+
+
+# test: square()
+request = calculator_pb2.Number(value=5)
+response = stub.Square(request)
+print(f"Request 'square' of {request.value}. Response: {response.value}")

@@ -14,6 +14,11 @@ class CalculatorStub(object):
     Args:
       channel: A grpc.Channel.
     """
+    self.Square = channel.unary_unary(
+        '/Calculator/Square',
+        request_serializer=calculator__pb2.Number.SerializeToString,
+        response_deserializer=calculator__pb2.Number.FromString,
+        )
     self.SquareRoot = channel.unary_unary(
         '/Calculator/SquareRoot',
         request_serializer=calculator__pb2.Number.SerializeToString,
@@ -25,6 +30,13 @@ class CalculatorServicer(object):
   # missing associated documentation comment in .proto file
   pass
 
+  def Square(self, request, context):
+    # missing associated documentation comment in .proto file
+    pass
+    context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+    context.set_details('Method not implemented!')
+    raise NotImplementedError('Method not implemented!')
+
   def SquareRoot(self, request, context):
     # missing associated documentation comment in .proto file
     pass
@@ -35,6 +47,11 @@ class CalculatorServicer(object):
 
 def add_CalculatorServicer_to_server(servicer, server):
   rpc_method_handlers = {
+      'Square': grpc.unary_unary_rpc_method_handler(
+          servicer.Square,
+          request_deserializer=calculator__pb2.Number.FromString,
+          response_serializer=calculator__pb2.Number.SerializeToString,
+      ),
       'SquareRoot': grpc.unary_unary_rpc_method_handler(
           servicer.SquareRoot,
           request_deserializer=calculator__pb2.Number.FromString,

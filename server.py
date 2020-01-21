@@ -6,13 +6,12 @@ import calculator_pb2, calculator_pb2_grpc
 
 import calculator
 
-
-# define server functions
+# DEFINE CALCULATOR SERVICE
 class CalculatorServicer(calculator_pb2_grpc.CalculatorServicer):
 
     def SquareRoot(self, request, context):
         """
-        Exposes calculator.square_root and calls it to return the square root of the `request` param.
+        Exposes calculator.square_root() and calls it to return the square root of the `request` param.
         """
         
         #  init the response as an instance of the Number class
@@ -23,7 +22,17 @@ class CalculatorServicer(calculator_pb2_grpc.CalculatorServicer):
         
         return response
 
+    def Square(self, request, context):
+        """
+        Exposes calculator.square() and calls it to return the square of the `request` param.
+        """ 
 
+        response = calculator_pb2.Number()
+        response.value = calculator.square(request.value)
+        return response
+
+
+# INSTANTIATE GRPC SERVER
 # create a gRPC server
 server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
 
