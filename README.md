@@ -48,5 +48,5 @@ To close the server, interrupt the keyboard (`ctrl+c`) in the terminal window wh
 
 # References
 
-1. Ramanan Balakrishnan's [blog post](https://engineering.semantics3.com/6c4e25f0c506) and [repo](https://github.com/ramananbalakrishnan/basic-grpc-python)
+1. Ramanan Balakrishnan's [blog post](https://www.semantics3.com/blog/a-simplified-guide-to-grpc-in-python-6c4e25f0c506/) and [repo](https://github.com/ramananbalakrishnan/basic-grpc-python)
 2. [gRPC docs](https://grpc.io/docs/)
