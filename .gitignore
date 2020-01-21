@@ -1,2 +1,3 @@
 # ignore virtual environments
 env/
+.vscode/
