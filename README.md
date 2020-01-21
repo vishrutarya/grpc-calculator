@@ -1,12 +1,12 @@
 # Simple gRPC service: calculator
 
-# Summary
+## Summary
 
-Implements a near-minimal gRPC service. As such, provides a quick high-level introduction to Google's open-sourced remote procedure call (RPC) framework.
+Implements a nearly minimal gRPC service. As such, provides a quick high-level introduction to how client-server communication is handled by Google's open-sourced remote procedure call (RPC) framework.
 
 The service implemented is a simple calculator. By exposing two methods, the calculator enables the client to enter a number and receive either the number's square or square root, as desired.
 
-# Quick start
+## Quick start
 
 In a terminal window, clone the repo, install requirements, create the auto-generated protobuf files, and instantiate the server:
 ```
