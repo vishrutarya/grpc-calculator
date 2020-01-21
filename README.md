@@ -27,6 +27,7 @@ To close the server, interrupt the keyboard (`ctrl+c`) in the terminal window wh
 
 ## File structure and descriptions
 
+```
 /grpc-calculator
 ├── calculator.proto        # defines protocol buffer (syntax, messages, services)
 |
@@ -43,6 +44,7 @@ To close the server, interrupt the keyboard (`ctrl+c`) in the terminal window wh
 ├── README.md
 ├── requirements.txt        
 ├── .gitignore
+```
 
 # References
 
